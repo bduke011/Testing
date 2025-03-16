@@ -1,34 +1,20 @@
-# Testing Repository
+# Base44 App
 
-## Overview
-This is a test repository created via the MCP GitHub integration. It serves as a demonstration of how to use GitHub's API to manage repositories programmatically.
 
-## Features
-- Simple repository structure
-- Initialized with a README file
-- Created through API integration
+This app was created automatically by Base44.
+It's a Vite+React app that communicates with the Base44 API.
 
-## Getting Started
-To get started with this repository, you can clone it using:
+## Running the app
 
 ```bash
-git clone https://github.com/bduke011/Testing.git
+npm install
+npm run dev
 ```
 
-## Usage
-This repository can be used for:
-- Testing GitHub integrations
-- Learning Git workflows
-- Experimenting with repository management
+## Building the app
 
-## Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+```bash
+npm run build
+```
 
-## License
-This project is open source and available under the [MIT License](LICENSE).
-
-## Contact
-If you have any questions or feedback, please open an issue in this repository.
-
----
-*Created on March 6, 2025*
+For more information and support, please contact Base44 support at app@base44.com.

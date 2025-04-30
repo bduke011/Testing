@@ -1,20 +1,27 @@
 workflows:
-  flutter-ios-build:
-    name: Build Flutter iOS App
+  flutter-ios-release:
+    name: Flutter iOS Release Build
     max_build_duration: 60
     environment:
       flutter: stable
       xcode: latest
       cocoapods: default
+      vars:
+        BUNDLE_ID: "com.yourcompany.yourapp"   # ← Replace with your app's bundle ID
     scripts:
       - name: Install Flutter dependencies
         script: |
           flutter pub get
       - name: Build iOS release
         script: |
-          flutter build ios --release
+          flutter build ios --release --no-codesign
     artifacts:
-      - build/ios/iphoneos/**/*.app
+      - build/ios/iphoneos/Runner.app
+      - build/ios/ipa/*.ipa
     publishing:
       app_store_connect:
-        api_key: Encrypted(API_KEY_FROM_CODMAGIC)
+        api_key: $APP_STORE_API_KEY
+        key_id: $APP_STORE_KEY_ID
+        issuer_id: $APP_STORE_ISSUER_ID
+        submit_to_testflight: true      # Set to false if you only want to upload to App Store Connect
+        submit_to_app_store: false      # Set to true if you want to submit directly to the App Store
